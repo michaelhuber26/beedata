@@ -1,5 +1,10 @@
 # beedata
 
+#Projekt clonen und bearbeiten:
+1) neues vue Projekt, Vue 3 & Vue-router plugin erstellen
+2) repository clonen
+3) die daten vom neu erstelleten projekt ersetzen mit denen des geclonten reposotory
+
 ## Project setup
 ```
 npm install
