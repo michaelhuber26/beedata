@@ -20,52 +20,41 @@
   </div>
 </template>
 
+
 <script>
-import request from "request";
+//import request from "request";
+import axios from "axios";
 
 export default {
   name: "DataTable",
 
   created() {
-   // myData = new Object();
+    // myData = new Object();
+    
+  // err be http requst (cors)
+  // Response to preflight request doesn't pass access control check: 
+  // No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
-    const url =
-      "https://esp32-1channel-gateway-test.data.thethingsnetwork.org/api/v2/query?last=20d";
-
-    const options = {
-      url: url,
-      headers: {
-        Authorization:
-          "key ttn-account-v2.LzHLMQlro-qrHb85jxYYDMLdCTdLkBQHKeWMkOc4Bjw",
-      },
-    };
-
-    function callback(error, response, body) {
-      if (!error && response.statusCode == 200) {
-        const info = JSON.parse(body);
-        console.log(getInfo(info, 40)); //getInfo("wholeinfoObjekt", "länge der daten die man anzeigen willst")
-      }
-    }
-
-    function getInfo(info, len) {
-      console.log(len);
-      let ret = new Array(len);
-      for (let i = 0; i < len; i++) {
-        try {
-          ret[i] = info[i]["ASCII"];
-        } catch (e) {
-          console.log(e);
-          continue;
+    axios
+      .get(
+        "https://esp32-1channel-gateway-test.data.thethingsnetwork.org/api/v2/query?last=3d",
+        {
+          
+          headers: {
+            Accept: "application/json",
+            Authorization:
+              "key ttn-account-v2.LzHLMQlro-qrHb85jxYYDMLdCTdLkBQHKeWMkOc4Bjw",
+          },
         }
-      }
-
-      return ret;
-    }
-
-    request(options, callback);
+      )
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
 
 
-/*
+
+    //https://web.dev/cross-origin-resource-sharing/
+
+    /*
 
 
 
