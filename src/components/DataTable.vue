@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table style="width: 100%">
+    <!-- <table style="width: 100%">
       <tr>
         <th>Firstname</th>
         <th>Lastname</th>
@@ -16,7 +16,7 @@
         <td>Jackson</td>
         <td>94</td>
       </tr>
-    </table>
+    </table> -->
   </div>
 </template>
 
@@ -54,9 +54,8 @@ export default {
 
     //https://web.dev/cross-origin-resource-sharing/
 
+
     /*
-
-
 
     // EXTRACT VALUE FOR HTML HEADER.
     // ('Book ID', 'Book Name', 'Category' and 'Price')
